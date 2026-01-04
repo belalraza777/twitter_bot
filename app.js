@@ -4,7 +4,7 @@ import { findTrendingTopicsWithAI, generateTweetWithAI } from "./services/ai.js"
 async function main() {
     try {
         //Genrate Trending Topics
-        const trendingTopics = await findTrendingTopicsWithAI("technology/coding", "global", 3);
+        const trendingTopics = await findTrendingTopicsWithAI("Technology | coding | Tools ", "global", 3);
         console.log(trendingTopics.trends);
         //Generate Tweet Content Based on Trending Topics
         const tweetContent = await generateTweetWithAI(trendingTopics.trends);

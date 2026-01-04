@@ -31,6 +31,8 @@ const generateTweetWithAI = async (topic) => {
         "No hard word to understand.",
         "More human-like.",
         "Give Open answers.",
+        "Use emojis appropriately.",
+        "More Human-like and Add Humor.",
     ].join(" ");
 
     const userPrompt = [
@@ -41,7 +43,7 @@ const generateTweetWithAI = async (topic) => {
     try {
         const response = await openai.chat.completions.create({
             model: "gpt-4o",
-            temperature: 0.3,
+            temperature: 0.8,
             response_format: { type: "json_object" },
             messages: [
                 { role: "system", content: systemPrompt },
